@@ -12,5 +12,8 @@
         <td>
             <a href="/jsprestaurant_war_exploded/order/current">Lista current</a>
         </td>
+        <td>
+            <a href="/jsprestaurant_war_exploded/order/add">Dodaj zamowienie</a>
+        </td>
     </tr>
 </table>

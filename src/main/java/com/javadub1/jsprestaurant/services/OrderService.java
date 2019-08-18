@@ -7,6 +7,7 @@ import com.javadub1.jsprestaurant.model.Order;
 import com.javadub1.jsprestaurant.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -64,30 +65,27 @@ public class OrderService {
         product.setOrder(orderToWhichProductShallBeAdded);
         entityDao.saveOrUpdate(product); // najpierw musimy mieć pewność że produkt jest w bazie
 
-//        Dwie poniższe linie są w pełni opcjonalne!
-        orderToWhichProductShallBeAdded.getProducts().add(product);
-        entityDao.saveOrUpdate(orderToWhichProductShallBeAdded); // zapisujemy order powiązany z produktem.
+ //       orderToWhichProductShallBeAdded.getProducts().add(product);
+ //       entityDao.saveOrUpdate(orderToWhichProductShallBeAdded); // zapisujemy order powiązany z produktem.
     }
 
     public Optional<Order> findById(Long idOrder) {
-
         Order order = entityDao.getById(Order.class, idOrder);
         return Optional.ofNullable(order);
     }
 
     public void removeProduct(Long idOrder, Long idProduct) {
-
-        Order order = entityDao.getById(Order.class, idOrder);
-        Product product = entityDao.getById(Product.class, idProduct);
-
-        if(product != null) {
-            order.getProducts().remove(product);
-            product.setOrder(null);
-            entityDao.saveOrUpdate(order);
-            entityDao.delete(product);
-        } else {
-            System.err.println("Nie ma takiego produktu");
-        }
+            SessionFactory factory = HibernateUtil.getSessionFactory();
+            try (Session session = factory.openSession()) {
+                Transaction transaction = session.beginTransaction();
+                Order order = session.get(Order.class, idOrder);
+                Product product = session.get(Product.class, idProduct);
+                order.getProducts().remove(product);
+                product.setOrder(null);
+                session.saveOrUpdate(order);
+                session.delete(product);
+                transaction.commit();
+            }
     }
 
     // pobierz orders ktore sa undelivered

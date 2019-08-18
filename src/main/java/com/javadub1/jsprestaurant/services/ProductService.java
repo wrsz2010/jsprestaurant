@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 public class ProductService {
@@ -19,6 +20,14 @@ public class ProductService {
         try (Session session = factory.openSession()) {
             Order result = session.get(Order.class, orderId);
             return new HashSet<>(result.getProducts());
+        }
+    }
+
+    public Optional<Product> findById(Long productId) {
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try (Session session = factory.openSession()) {
+            Product result = session.get(Product.class, productId);
+            return Optional.ofNullable(result);
         }
     }
 }
