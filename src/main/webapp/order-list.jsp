@@ -40,7 +40,10 @@
             out.print("<td>" + (order.getPaid() != null) + "</td>");
             out.print("<td>" +
                     getLinkForProductList(order.getId()) +
-                    "</td>");
+                    getLinkForDeliveringOrder(order) +
+                    getLinkPaidOrder(order) +
+                    getLinkToRemoveOrder(order) +
+                      "</td>");
             out.print("</tr>");
         }
     %>
@@ -51,5 +54,27 @@
 <%!
     private String getLinkForProductList(Long id) {
         return "<a href=\"/jsprestaurant_war_exploded/product/list?orderId=" + id + "\">Produkty</a>";
+    }
+    private String getLinkForDeliveringOrder(Order order) {
+        if (order.getTimeDelivered() == null) {
+            return "<a href=\"/jsprestaurant_war_exploded/order/deliver?orderId=" + order.getId() + "\">Dostarczono</a>";
+        } else {
+            return "";
+        }
+    }
+
+    private String getLinkPaidOrder(Order order) {
+        if (order.getTimeDelivered() != null && order.getPaid() == null && order.getToPay() != null) {
+            return "<a href=\"/jsprestaurant_war_exploded/order/paid?orderId=" + order.getId() + "\">Zaplacono</a>";
+        } else {
+            return "";
+        }
+    }
+    private String getLinkToRemoveOrder(Order order) {
+        if (order.getProductsCount() == 0) {
+            return "<a href=\"/jsprestaurant_war_exploded/order/remove?orderId=" + order.getId() + "\">Usun</a>";
+        } else {
+            return "";
+        }
     }
 %>

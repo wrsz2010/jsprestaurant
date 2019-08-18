@@ -24,7 +24,9 @@ public class OrderService {
         entityDao.saveOrUpdate(order);
     }
 
-    public void delete(Order order) {
+    public void delete(Long orderId) {
+
+        Order order = entityDao.getById(Order.class, orderId);
         entityDao.delete(order);
     }
 

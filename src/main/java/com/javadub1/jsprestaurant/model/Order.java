@@ -48,6 +48,10 @@ public class Order implements IBaseEntity{
 
     private int tableNumber;
 
+
+    @Formula("(select count(*) from Product p where p.order_id = id)")
+    private Integer productsCount;
+
 //    @Formula("(select sum(o.creation_date) from Orders o where o.customer_id = id)")
     @Formula("(select sum(p.value*p.amount) from Product p where p.order_id = id)")
     private Double toPay;
