@@ -36,7 +36,7 @@
             out.print("<td>" + order.getFormattedTimeDelivered() + "</td>");
             out.print("<td>" + order.getPeopleCount() + "</td>");
             out.print("<td>" + order.getTableNumber() + "</td>");
-            out.print("<td>" + (order.calculateToPay()) + "</td>");
+            out.print("<td>" + String.format("%.2f", order.calculateToPay() + "</td>");
             out.print("<td>" + (order.getPaid() != null) + "</td>");
             out.print("<td>" +
                     getLinkForProductList(order.getId()) +
