@@ -7,20 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b523c4fc-7a1c-41e3-bae2-da9dd2bf0f1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/OrderAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/ProductAddServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/ProductEditServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/ProductRemoveServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/order-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/services/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/navigator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/navigator.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/javadub1/jsprestaurant/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/javadub1/jsprestaurant/services/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jsprestaurant/WEB-INF/classes/com/javadub1/jsprestaurant/services/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsprestaurant/WEB-INF/classes/com/javadub1/jsprestaurant/services/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jsprestaurant/navigator.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsprestaurant/navigator.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/ProductEditServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javadub1/jsprestaurant/servlets/ProductEditServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/javadub1/jsprestaurant/services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/javadub1/jsprestaurant/services/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jsprestaurant/WEB-INF/classes/com/javadub1/jsprestaurant/services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsprestaurant/WEB-INF/classes/com/javadub1/jsprestaurant/services/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jsprestaurant/product-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsprestaurant/product-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/jsprestaurant/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/jsprestaurant/product-list.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -178,7 +171,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566038734292</updated>
       <workItem from="1566038737556" duration="13311000" />
-      <workItem from="1566115709880" duration="16556000" />
+      <workItem from="1566115709880" duration="19106000" />
     </task>
     <servers />
   </component>

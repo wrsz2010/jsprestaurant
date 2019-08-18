@@ -39,6 +39,8 @@
             out.print("<td>" + product.getAmount() + "</td>");
             out.print("<td>" +
                     getLinkForProductRemove(orderId, product.getId()) +
+                    getLinkToEditProduct(orderId, product.getId()) +
+
                     "</td>");
             out.print("</tr>");
         }
@@ -52,5 +54,7 @@
     private String getLinkForProductRemove(Long orderId, Long productId) {
     return "<a href=\"/jsprestaurant_war_exploded/product/remove?orderId=" + orderId + "&productId=" + productId + "\">Usun produkt</a>";
     }
-
+    private String getLinkToEditProduct(Long orderId, Long productId) {
+        return "<a href=\"/jsprestaurant_war_exploded/product/edit?orderId=" + orderId + "&productId=" + productId + "\">Edytuj</a>";
+    }
 %>

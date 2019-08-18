@@ -1,8 +1,8 @@
-<%--
+<%@ page import="com.javadub1.jsprestaurant.model.Product" %><%--
   Created by IntelliJ IDEA.
-  User: wrsz2
-  Date: 18/08/2019
-  Time: 12:29
+  User: amen
+  Date: 8/18/19
+  Time: 11:40 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,24 +13,49 @@
 <body>
 <jsp:include page="navigator.jsp"/>
 <h1>Formularz produktu</h1>
-<form style="width: 50%;margin:auto;" action="/jsprestaurant_war_exploded/product/add" method="post">
-    <input type="hidden" name="orderId" value="<%= request.getAttribute("orderIdAttribute")%>">
+
+<%
+    String operation = "add";
+
+    String descriptionValue = "";
+    String amountValue = "";
+    String valueValue = "";
+    String editedProductIdValue = "";
+
+    Object possibleProduct = request.getAttribute("productAttribute");
+    if (possibleProduct != null && possibleProduct instanceof Product) {
+        operation = "edit";
+
+        Product product = (Product) possibleProduct;
+
+        descriptionValue = product.getDescription();
+        amountValue = String.valueOf(product.getAmount());
+        valueValue = String.valueOf(product.getValue());
+
+        editedProductIdValue = String.valueOf(product.getId());
+    }
+%>
+
+<form style="width: 50%;margin:auto;" action="/jsprestaurant_war_exploded/product/<%= operation %>" method="post">
+    <input type="hidden" name="orderId" value="<%= request.getAttribute("orderIdAttribute") %>">
+    <input type="hidden" name="editedProductId" value="<%= editedProductIdValue %>">
+
     <label style="display:inline-block;min-width: 49%;width: 49%;" for="descriptionId">Opis zamówienia:</label>
-    <input style="width: 50%" id="descriptionId" name="descriptionParam" type="text">
+    <input style="width: 50%" id="descriptionId" name="descriptionParam" value="<%=descriptionValue%>" type="text">
 
     <br/>
 
     <label style="display:inline-block;min-width: 49%;width: 49%;" for="amountId">Ilość:</label>
-    <input style="width: 50%" id="amountId" name="amountParam" type="number" step="1">
+    <input style="width: 50%" id="amountId" name="amountParam" value="<%=amountValue%>" type="number" step="1">
 
     <br/>
 
     <label style="display:inline-block;min-width: 49%;width: 49%;" for="valueId">Cena:</label>
-    <input style="width: 50%" id="valueId" name="valueParam" type="number" step="0.01" min="0.0">
+    <input style="width: 50%" id="valueId" name="valueParam" value="<%=valueValue%>" type="number" step="0.01" min="0.0">
 
     <br/>
 
-    <input style="width: 20%" type="submit">
+    <input style="width: 100%" type="submit">
 
 </form>
 

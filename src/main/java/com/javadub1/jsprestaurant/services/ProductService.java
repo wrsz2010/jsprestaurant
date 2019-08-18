@@ -30,4 +30,8 @@ public class ProductService {
             return Optional.ofNullable(result);
         }
     }
+
+    public void update(Product product) {
+        entityDao.saveOrUpdate(product);
+    }
 }
